@@ -8,7 +8,7 @@ The training took around 22-24 hours to run on the 2 v100 machines
 
 #### 2. Do you think your model is fully trained? How can you tell?
 
-Yes, I believe it finished, if we look at the nohup file (we had set the training step size to 50k instead of 300k) - we see the bottom of the file explicitly indicates that training has finished: "*** Finished training". Moreover, if we look at the tensorboard, we notice that it is no longer updating the number of steps beyond 50k. This is enough proof the training has completed.
+Yes, I believe it finished, if we look at the nohup file (we had set the training step size to 50k instead of 300k) - we see the bottom of the file explicitly indicates that training has finished. Moreover, if we look at the tensorboard, we notice that it is no longer updating the number of steps beyond 50k in any of the graphs. This is enough proof the training has completed.
 
 #### 3. Were you overfitting?
 
@@ -20,6 +20,8 @@ Yes, I believe it finished, if we look at the nohup file (we had set the trainin
 Network did NOT seem to be the bottleneck based on nmon stats. It seemed like the network 
 
 #### 6. Take a look at the plot of the learning rate and then check the config file. Can you explan this setting?
+
+
 
 #### 7. How big was your training set (mb)? How many training lines did it contain?
 
