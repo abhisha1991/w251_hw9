@@ -1,0 +1,6 @@
+model_checkpoint_path: "val_loss=1.5843-step-50000"
+all_model_checkpoint_paths: "val_loss=1.6054-step-42022"
+all_model_checkpoint_paths: "val_loss=1.6006-step-44023"
+all_model_checkpoint_paths: "val_loss=1.5938-step-46024"
+all_model_checkpoint_paths: "val_loss=1.5924-step-48025"
+all_model_checkpoint_paths: "val_loss=1.5843-step-50000"
