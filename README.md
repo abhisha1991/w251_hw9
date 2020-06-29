@@ -29,6 +29,9 @@ Network did NOT seem to be the bottleneck based on nmon stats. It seemed like th
 
 #### 9. How big is your resulting model checkpoint (mb)?
 
+The entire "best model" folder was around 4.1G, whereas the actual checkpoint itself was around 4KB. Below are some additional details:
+![model_size](https://github.com/abhisha1991/w251_hw9/blob/master/Final/ModelSize.PNG)
+
 #### 10. Remember the definition of a "step". How long did an average step take?
 
 From the bottom of the nohup file, we see that the average time taken for a step was 1.629 seconds
