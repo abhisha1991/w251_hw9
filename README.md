@@ -31,4 +31,6 @@ Network did NOT seem to be the bottleneck based on nmon stats. It seemed like th
 
 #### 10. Remember the definition of a "step". How long did an average step take?
 
+From the bottom of the nohup file, we see that the average time taken for a step was 1.629 seconds
+
 #### 11. How does that correlate with the observed network utilization between nodes?
