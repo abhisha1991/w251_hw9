@@ -27,6 +27,8 @@ Network did NOT seem to be the bottleneck based on nmon stats. It seemed like th
 
 #### 8. What are the files that a TF checkpoint is comprised of?
 
+I am getting the answer from [here](https://stackoverflow.com/questions/44516609/tensorflow-what-is-the-relationship-between-ckpt-file-and-ckpt-meta-and-ckp) partially. Basically, a TF model checkpoint consists of a few different files - index, meta and data. These are files used to construct the model again. The .ckpt-meta contains the structure of the computation graph of the model. The .ckpt-data contains the values for all the variables, without the structure. 
+
 #### 9. How big is your resulting model checkpoint (mb)?
 
 The entire "best model" folder was around 4.1G, whereas the actual checkpoint itself was around 4KB. Below are some additional details:
