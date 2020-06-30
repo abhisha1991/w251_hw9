@@ -20,6 +20,8 @@ If we look at both the eval_loss and training_loss, we observe that they both we
 
 #### 4. Were your GPUs fully utilized?
 
+The performance varied over time, but it did seem like we were able to achieve a good continuous usage on the GPUs. 
+
 #### 5. Did you monitor network traffic (hint: apt install nmon ) ? Was network the bottleneck?
 
 Network did NOT seem to be the bottleneck based on nmon stats. It seemed like the network settings were accelerated under the covers by Horovod / NCCL / Infiniband - and because of this the potential network bottleneck seemed to have vanished. The reason I say this is because, according to the instructions in the homework and these [docs](https://cloud.ibm.com/docs/cli?topic=cli-cli-virtual-servers), we set the "--network" parameter to be 1000 (ie, 1000 Mbps) when setting up the Vms. This translates to 125 MBps ethernet links between the Vms. So theoretically, if the data transfer rates between the Vms increased beyond 125 MBps, then we would have throttled on the networking side. However on close inspection of nmon, we find that speeds of 220 MBps were being achieved on the Vms. Hence, it seems like while there SHOULD have been a bottleneck due to the networking settings, however, in reality we bypassed this. Below is an image with the details of a screenshot capture of nmon. 
@@ -27,7 +29,7 @@ Network did NOT seem to be the bottleneck based on nmon stats. It seemed like th
 
 #### 6. Take a look at the plot of the learning rate and then check the config file. Can you explan this setting?
 
-
+The learning rate has warm up steps = 8000, which means that we linearly increase the learning rate up to 8000 steps, as seen in the graph, and then we start decaying the learning rate after reaching that point. An explanation of warm up steps is given [here](https://datascience.stackexchange.com/questions/55991/in-the-context-of-deep-learning-what-is-training-warmup-steps). For NLP models, it seems like warm up steps has the benefit of slowly starting to tune things like attention mechanisms in your network. A learning rate of "2" given in the settings is likely some factor using which we are first increasing and then decreasing the learning over time.
 
 #### 7. How big was your training set (mb)? How many training lines did it contain?
 
@@ -47,3 +49,4 @@ The entire "best model" folder was around 4.1G, whereas the actual checkpoint it
 From the bottom of the nohup file, we see that the average time taken for a step was 1.629 seconds
 
 #### 11. How does that correlate with the observed network utilization between nodes?
+
