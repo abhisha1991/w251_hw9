@@ -26,7 +26,7 @@ Network did NOT seem to be the bottleneck based on nmon stats. It seemed like th
 
 #### 7. How big was your training set (mb)? How many training lines did it contain?
 
-There were 2 training files - train.de (size = 678 M, lines =) and train.en (size = 607 M, lines = 4562012)
+There were 2 training files - train.de (size = 678 M, lines = 4562012) and train.en (size = 607 M, lines = 4562012)
 
 #### 8. What are the files that a TF checkpoint is comprised of?
 
