@@ -12,6 +12,11 @@ Yes, I believe it finished, if we look at the nohup file (we had set the trainin
 
 #### 3. Were you overfitting?
 
+If we look at both the eval_loss and training_loss, we observe that they both were converging to the same value (approx 1.6) after the training process / eval process ended. So we conclude that overfitting WAS NOT happening in the model.
+
+![train](https://github.com/abhisha1991/w251_hw9/blob/master/Final/Train_Loss.PNG)
+
+![eval](https://github.com/abhisha1991/w251_hw9/blob/master/Final/Eval_Loss.PNG)
 
 #### 4. Were your GPUs fully utilized?
 
