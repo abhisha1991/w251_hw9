@@ -21,6 +21,7 @@ If we look at both the eval_loss and training_loss, we observe that they both we
 #### 4. Were your GPUs fully utilized?
 
 The performance varied over time, but it did seem like we were able to achieve a good continuous usage on the GPUs. 
+![gpu](https://github.com/abhisha1991/w251_hw9/blob/master/Final/GPU.PNG)
 
 #### 5. Did you monitor network traffic (hint: apt install nmon ) ? Was network the bottleneck?
 
