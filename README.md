@@ -47,7 +47,7 @@ The entire "best model" folder was around 4.1G, whereas the actual checkpoint it
 
 #### 10. Remember the definition of a "step". How long did an average step take?
 
-From the bottom of the nohup file, we see that the average time taken for a step was 1.629 seconds
+From the bottom of the nohup file, we see that the average time taken for a step was 1.629 seconds. In fact this makes a lot of sense. Our total training steps was 50k. If each training step takes 1.629 seconds, then the total time taken to train is 50k x 1.629 = 81,450 seconds or roughly, 22.625 hours. This is very well in expectation with what our observed training time was (22-24 hours)
 
 #### 11. How does that correlate with the observed network utilization between nodes?
 
