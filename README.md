@@ -51,3 +51,4 @@ From the bottom of the nohup file, we see that the average time taken for a step
 
 #### 11. How does that correlate with the observed network utilization between nodes?
 
+We would imagine that as the network utilization increases between the nodes, more data and parameter updates are happening, hence we will be observing faster step times. If there is little usage of network between the 2 machines, then each machine is busy in terms of processing the model locally on the GPU, which means that the parameter updates are not taking place, which implies a slower step time.
