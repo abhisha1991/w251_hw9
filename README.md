@@ -54,3 +54,8 @@ From the bottom of the nohup file, we see that the average time taken for a step
 #### 11. How does that correlate with the observed network utilization between nodes?
 
 We would imagine that as the network utilization increases between the nodes, the more data is being transferred and the more often parameter updates are happening, hence we will be observing faster step times. If there is little usage of network between the 2 machines, then each machine is busy in terms of processing the model locally on the GPU, which means that the parameter updates are not taking place that often, which implies a slower step time.
+
+Of course, this answer depends highly on other factors:
+1. The bigger the batch size given to each GPU, the more data the GPU will have to process locally before it can update the parameters and weights. This means that the GPU to GPU communication will happen less often as the GPUs are busy processing the batch, which implies network utilization will be lower and thus the step time will be larger.
+2. The faster the GPU (volta architecture [faster] vs pascal architecture [slower]), the faster the processing time for batches, which means more frequent updates to weights of the model, which means more network utilization and thus faster step times. In our case, we used the volta GPUs (v100), however, the step time would be expected to be larger in a p100.
+3. The more computationally expensive the model (per batch), the slower the weight updates, which implies lesser network utilization and slower step times.
