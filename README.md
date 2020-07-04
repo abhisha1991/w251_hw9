@@ -12,7 +12,7 @@ Yes, I believe it finished, if we look at the nohup file (we had set the trainin
 
 #### 3. Were you overfitting?
 
-If we look at both the eval_loss and training_loss, we observe that they both were converging to the same value (approx 1.6) after the training process / eval process ended. Moreover, if we look at the graphs, we conclude that while the training error reduces from 0 to 50k steps, the eval loss also reduces proportionately - indicating that the eval loss is reducing while the training error is also reducing. So we conclude that overfitting WAS NOT happening in the model.
+If we look at both the eval_loss and training_loss, we observe that they both were converging to the same value (approx 1.6) after the training process / eval process ended. Moreover, if we look at the graphs, we conclude that while the training error reduces from 0 to 50k steps, the eval loss also reduces proportionately - indicating that the eval loss is reducing while the training error is also reducing. If the training loss was reducing as steps increased, but the eval loss was staying flat after X number of steps, we could have used that as a sign of overfitting as well. This is however, not the case in the graphs below. So we conclude that overfitting WAS NOT happening in the model.
 
 ![train](https://github.com/abhisha1991/w251_hw9/blob/master/Final/Train_Loss.PNG)
 
